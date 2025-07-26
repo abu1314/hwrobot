@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { AntdProvider } from './providers';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '昊旺智能管理系统',
-  description: '昊旺智能管理系统 - 企业级应用',
+  title: '昊旺智能系统',
+  description: '昊旺智能系统 - 企业级应用',
 };
 
 export default function RootLayout({
@@ -17,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className={inter.className}>
-        <div className="min-h-screen bg-background">
+        <AntdProvider>
           {children}
-        </div>
+        </AntdProvider>
       </body>
     </html>
   );
